@@ -3,6 +3,8 @@ import createError from "http-errors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 
+import "./config/init_mysql.js";
+
 dotenv.config();
 
 const app = express();
