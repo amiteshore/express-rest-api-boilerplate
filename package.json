@@ -1,0 +1,28 @@
+{
+  "name": "express-sequelize-rest-boilerplate",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amiteshore/express-sequelize-rest-boilerplate.git"
+  },
+  "author": {
+    "name": "Amit Eshore",
+    "url": "https://amiteshore.com"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
