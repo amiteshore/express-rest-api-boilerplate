@@ -1,20 +1,8 @@
 {
-  "name": "express-sequelize-rest-boilerplate",
-  "version": "1.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amiteshore/express-sequelize-rest-boilerplate.git"
-  },
-  "author": {
-    "name": "Amit Eshore",
-    "url": "https://amiteshore.com"
-  },
-  "license": "MIT",
-  "type": "module",
-  "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "node dist",
+    "build": "rimraf dist && babel src --out-dir dist",
+    "dev": "nodemon --watch .env --watch src --exec babel-node src"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -25,6 +13,11 @@
     "sequelize": "^6.12.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "nodemon": "^2.0.15",
+    "rimraf": "^3.0.2"
   }
 }

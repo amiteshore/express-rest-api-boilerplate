@@ -1,5 +1,8 @@
 # Dependency directories
 node_modules/
 
-# Environment variable files
+# dotenv environment variable files
 .env
+
+# Babel build output
+dist
