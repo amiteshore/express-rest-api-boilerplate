@@ -1,9 +1,9 @@
 import express from "express";
-import createError from "http-errors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 
-import authorsRoute from "./routes/authors.js";
+import { notFound, genericErrorHandler } from "./middlewares/errorHandler";
+import authorsRoute from "./routes/authors";
 
 dotenv.config();
 
@@ -20,16 +20,9 @@ app.use(morgan("dev"));
 // API routes
 app.use("/authors", authorsRoute);
 
-// 404
-app.use((req, res, next) => {
-  next(createError.NotFound());
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.json({ message: err.message });
-});
+// Error middlewares
+app.use(notFound);
+app.use(genericErrorHandler);
 
 app.listen(PORT, () => {
   console.log(`started server on http://${HOST}:${PORT}`);
