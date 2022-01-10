@@ -1,11 +1,10 @@
+import "./env";
+
 import express from "express";
 import morgan from "morgan";
-import dotenv from "dotenv";
 
 import { notFound, genericErrorHandler } from "./middlewares/errorHandler";
 import authorsRoute from "./routes/authors";
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
